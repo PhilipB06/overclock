@@ -1,0 +1,7 @@
+{
+  "name": "overclock",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
