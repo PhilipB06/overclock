@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar style="--background: transparent; --border-width: 0;">
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row style="display: flex;">
+      <ion-col size="6" style="display: flex;">
+        <ion-card class="equal-height-card">
+          <ion-card-content>
+            <swiper-container
+              class="dashboard-swiper"
+              pagination="true"
+              direction="horizontal"
+              initial-slide="3"
+              space-between="20">
+              <swiper-slide>
+                <div class="slide-content">
+                  <h2>
+                    Overtime
+                    <ion-icon name="trending-up-outline" size="large" color="success"></ion-icon>
+                  </h2>
+                  <p class="big">+12.5 hrs</p>
+                  <h3>Week 42</h3>
+                </div>
+              </swiper-slide>
+
+              <swiper-slide>
+                <div class="slide-content">
+                  <h2>
+                    Overtime
+                    <ion-icon name="trending-up-outline" size="large" color="success"></ion-icon>
+                  </h2>
+                  <p class="big">+12.5 hrs</p>
+                  <h3>October</h3>
+                </div>
+              </swiper-slide>
+
+              <swiper-slide>
+                <div class="slide-content">
+                  <h2>
+                    Overtime
+                    <ion-icon name="trending-up-outline" size="large" color="success"></ion-icon>
+                  </h2>
+                  <p class="big">+12.5 hrs</p>
+                  <h3>2025</h3>
+                </div>
+              </swiper-slide>
+
+              <swiper-slide>
+                <div class="slide-content">
+                  <h2>
+                    Overtime
+                    <ion-icon name="trending-up-outline" size="large" color="success"></ion-icon>
+                  </h2>
+                  <p class="big">+12.5 hrs</p>
+                  <h3>All time</h3>
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6" style="display: flex;">
+        <ion-card class="equal-height-card">
+          <ion-card-content>
+            <h2>
+              Today
+              <ion-icon name="time-outline" size="large" color="primary"></ion-icon>
+            </h2>
+            <p class="big">8.0 hrs</p>
+            <ion-text color="primary">
+              <h3>09:00 - 17:00</h3>
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card>
+    <ion-card-content>
+      <h3>Weekly Overview</h3>
+      <p>Current Week Hours: 26 / 40</p>
+      <p>Overtime Earned: +2.5 hrs</p>
+      <p>Days Remaining: 2</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <apx-chart
+        [series]="chartOptions.series!"
+        [chart]="chartOptions.chart!"
+        [xaxis]="chartOptions.xaxis!"
+        [dataLabels]="chartOptions.dataLabels!"
+        [stroke]="chartOptions.stroke!"
+        [title]="chartOptions.title!">
+      </apx-chart>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <h3>Current Week Progress</h3>
+      <ion-progress-bar value="0.65" color="primary"></ion-progress-bar>
+      <p>26 / 40 hours</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
