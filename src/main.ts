@@ -10,15 +10,17 @@ import { isDevMode } from '@angular/core';
 import { provideServiceWorker } from '@angular/service-worker';
 
 import { addIcons } from 'ionicons';
-import { settingsOutline, trendingUpOutline, trendingDownOutline, removeOutline, timeOutline } from 'ionicons/icons';
+import { settingsOutline, trendingUpOutline, trendingDownOutline, removeOutline, timeOutline, home, list, barChart, homeOutline, listOutline, statsChartOutline } from 'ionicons/icons';
 
-// Import Swiper web components
 import { register } from 'swiper/element/bundle';
 register();
 defineCustomElements(window);
 setAssetPath(document.baseURI || '/');
 
 addIcons({
+  'home-outline': homeOutline,
+  'list-outline': listOutline,
+  'stats-chart-outline': statsChartOutline,
   'settings-outline': settingsOutline,
 
   // Dashboard icons
