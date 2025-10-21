@@ -47,18 +47,18 @@
 }
 
 body {
-  --ion-background-color: #121212;
+  --ion-background-color: #161616;
   --ion-text-color: #e5e5e5;
-  --ion-card-background: #1e1e1e;
-  --ion-toolbar-background: #1e1e1e;
-  --ion-item-background: #1e1e1e;
+  --ion-card-background: #222222;
+  --ion-toolbar-background: #222222;
+  --ion-item-background: #222222;
   background-color: var(--ion-background-color);
 }
 
 ion-card {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  margin: 12px;
+  margin: 5px;
 }
 
 ion-card-content {

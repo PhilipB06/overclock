@@ -1,23 +1,24 @@
 <ion-header>
-  <ion-toolbar style="--background: transparent; --border-width: 0;">
+  <ion-toolbar class="toolbar-transparent">
     <ion-title>Dashboard</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen [scrollY]="false">
   <ion-grid>
-    <ion-row style="display: flex;">
-      <ion-col size="6" style="display: flex;">
+    <ion-row class="row-flex">
+      <ion-col size="6" class="col-flex">
         <ion-card class="equal-height-card">
-          <ion-card-content>
+          <ion-card-content class="no-bottom-padding">
             <swiper-container
               class="dashboard-swiper"
               pagination="true"
               direction="horizontal"
               initial-slide="3"
-              space-between="20">
+              space-between="20"
+              style="height: 100px">
               <swiper-slide>
-                <div class="slide-content">
+                <div>
                   <h2>
                     Overtime
                     <ion-icon name="trending-up-outline" size="large" color="success"></ion-icon>
@@ -28,7 +29,7 @@
               </swiper-slide>
 
               <swiper-slide>
-                <div class="slide-content">
+                <div>
                   <h2>
                     Overtime
                     <ion-icon name="trending-up-outline" size="large" color="success"></ion-icon>
@@ -39,7 +40,7 @@
               </swiper-slide>
 
               <swiper-slide>
-                <div class="slide-content">
+                <div>
                   <h2>
                     Overtime
                     <ion-icon name="trending-up-outline" size="large" color="success"></ion-icon>
@@ -50,7 +51,7 @@
               </swiper-slide>
 
               <swiper-slide>
-                <div class="slide-content">
+                <div>
                   <h2>
                     Overtime
                     <ion-icon name="trending-up-outline" size="large" color="success"></ion-icon>
@@ -64,7 +65,7 @@
         </ion-card>
       </ion-col>
 
-      <ion-col size="6" style="display: flex;">
+      <ion-col size="6" class="col-flex">
         <ion-card class="equal-height-card">
           <ion-card-content>
             <h2>
@@ -81,31 +82,71 @@
     </ion-row>
   </ion-grid>
 
-  <ion-card>
-    <ion-card-content>
-      <h3>Weekly Overview</h3>
-      <p>Current Week Hours: 26 / 40</p>
-      <p>Overtime Earned: +2.5 hrs</p>
-      <p>Days Remaining: 2</p>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-content>
-      <apx-chart
-        [series]="chartOptions.series!"
-        [chart]="chartOptions.chart!"
-        [xaxis]="chartOptions.xaxis!"
-        [dataLabels]="chartOptions.dataLabels!"
-        [stroke]="chartOptions.stroke!"
-        [title]="chartOptions.title!">
-      </apx-chart>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-content>
-      <h3>Current Week Progress</h3>
-      <ion-progress-bar value="0.65" color="primary"></ion-progress-bar>
-      <p>26 / 40 hours</p>
-    </ion-card-content>
-  </ion-card>
+  <ion-grid class="grid-top-margin">
+    <ion-label class="label-weekly-overview">
+      Weekly Overview
+    </ion-label>
+
+    <ion-card class="card-bordered">
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8" class="col-weekly-overview">
+            <p>Hours left:</p>
+          </ion-col>
+          <ion-col size="4" class="ion-text-right col-weekly-overview">
+            <p class="p-bold-and-white">14.00h</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="8" class="col-weekly-overview">
+            <p>Workdays left:</p>
+          </ion-col>
+          <ion-col size="4" class="ion-text-right col-weekly-overview">
+            <p class="p-bold-and-white">2 days</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="8" class="col-weekly-overview">
+            <p>Total Overtime:</p>
+          </ion-col>
+          <ion-col size="4" class="ion-text-right col-weekly-overview">
+            <p class="p-bold-and-white">+02.5h</p>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+
+  <ion-grid class="grid-no-bottom-padding">
+    <ion-card class="card-bordered card-no-bottom-margin">
+      <ion-card-content>
+        <apx-chart
+          [series]="chartOptions.series!"
+          [chart]="chartOptions.chart!"
+          [xaxis]="chartOptions.xaxis!"
+          [dataLabels]="chartOptions.dataLabels!"
+          [stroke]="chartOptions.stroke!"
+          [title]="chartOptions.title!">
+        </apx-chart>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-card class="card-transparent">
+      <ion-card-content class="no-padding">
+        <ion-row>
+          <ion-col size="8" class="col-progress-text">
+            <h3 class="col-h3">Current Week Progress</h3>
+          </ion-col>
+          <ion-col size="4" class="ion-text-right col-progress-text">
+            <p class="p-bold-and-white">26 / 40 hours</p>
+          </ion-col>
+        </ion-row>
+        <ion-progress-bar value="0.75" color="primary" class="progress-bar-custom"></ion-progress-bar>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
 </ion-content>
