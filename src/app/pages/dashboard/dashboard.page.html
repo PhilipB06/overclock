@@ -5,11 +5,11 @@
 </ion-header>
 
 <ion-content fullscreen [scrollY]="false">
-  <ion-grid>
+  <ion-grid style="padding-top: 0;">
     <ion-row class="row-flex">
       <ion-col size="6" class="col-flex">
         <ion-card class="equal-height-card">
-          <ion-card-content class="no-bottom-padding">
+          <ion-card-content class="top-cards-padding">
             <swiper-container
               class="dashboard-swiper"
               pagination="true"
@@ -21,7 +21,7 @@
                 <div>
                   <h2>
                     Overtime
-                    <ion-icon name="trending-up-outline" size="large" color="success"></ion-icon>
+                    <ion-icon name="trending-up-outline" color="success"></ion-icon>
                   </h2>
                   <p class="big">+12.5 hrs</p>
                   <h3>Week 42</h3>
@@ -32,7 +32,7 @@
                 <div>
                   <h2>
                     Overtime
-                    <ion-icon name="trending-up-outline" size="large" color="success"></ion-icon>
+                    <ion-icon name="trending-up-outline" color="success"></ion-icon>
                   </h2>
                   <p class="big">+12.5 hrs</p>
                   <h3>October</h3>
@@ -43,7 +43,7 @@
                 <div>
                   <h2>
                     Overtime
-                    <ion-icon name="trending-up-outline" size="large" color="success"></ion-icon>
+                    <ion-icon name="trending-up-outline" color="success"></ion-icon>
                   </h2>
                   <p class="big">+12.5 hrs</p>
                   <h3>2025</h3>
@@ -54,7 +54,7 @@
                 <div>
                   <h2>
                     Overtime
-                    <ion-icon name="trending-up-outline" size="large" color="success"></ion-icon>
+                    <ion-icon name="trending-up-outline" color="success"></ion-icon>
                   </h2>
                   <p class="big">+12.5 hrs</p>
                   <h3>All time</h3>
@@ -67,10 +67,10 @@
 
       <ion-col size="6" class="col-flex">
         <ion-card class="equal-height-card">
-          <ion-card-content>
+          <ion-card-content class="top-cards-padding">
             <h2>
               Today
-              <ion-icon name="time-outline" size="large" color="primary"></ion-icon>
+              <ion-icon name="time-outline" color="primary"></ion-icon>
             </h2>
             <p class="big">8.0 hrs</p>
             <ion-text color="primary">
@@ -82,12 +82,12 @@
     </ion-row>
   </ion-grid>
 
-  <ion-grid class="grid-top-margin">
+  <ion-grid>
     <ion-label class="label-weekly-overview">
       Weekly Overview
     </ion-label>
 
-    <ion-card class="card-bordered">
+    <ion-card>
       <ion-card-content>
         <ion-row>
           <ion-col size="8" class="col-weekly-overview">
@@ -119,20 +119,23 @@
     </ion-card>
   </ion-grid>
 
-  <ion-grid class="grid-no-bottom-padding">
-    <ion-card class="card-bordered card-no-bottom-margin">
-      <ion-card-content>
-        <apx-chart
-          [series]="chartOptions.series!"
-          [chart]="chartOptions.chart!"
-          [xaxis]="chartOptions.xaxis!"
-          [dataLabels]="chartOptions.dataLabels!"
-          [stroke]="chartOptions.stroke!"
-          [title]="chartOptions.title!">
-        </apx-chart>
-      </ion-card-content>
-    </ion-card>
-  </ion-grid>
+<ion-grid>
+  <ion-label class="label-weekly-overview">
+    Monthly Overview
+  </ion-label>
+  <ion-card class="card-no-bottom-margin card-bordered">
+    <ion-card-content style="padding: 0 !important;">
+      <apx-chart
+        [series]="chartOptions.series!"
+        [chart]="chartOptions.chart!"
+        [xaxis]="chartOptions.xaxis!"
+        [plotOptions]="chartOptions.plotOptions!"
+        [grid]="chartOptions.grid!"
+        [yaxis]="chartOptions.yaxis!">
+      </apx-chart>
+    </ion-card-content>
+  </ion-card>
+</ion-grid>
 
   <ion-grid>
     <ion-card class="card-transparent">

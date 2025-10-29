@@ -1,3 +1,7 @@
+ion-card-content {
+  margin: 0;
+}
+
 .toolbar-transparent {
   --background: transparent;
   --border-width: 0;
@@ -9,14 +13,11 @@
 
 .col-flex {
   display: flex;
+  padding-top: 0;
 }
 
-.no-bottom-padding {
-  padding-bottom: 0 !important;
-}
-
-.grid-top-margin {
-  margin-top: 10px;
+.top-cards-padding {
+  padding: 8px 12px !important;
 }
 
 .grid-no-bottom-padding {
@@ -67,8 +68,6 @@ ion-progress-bar {
 
 h2 {
   color: white;
-  font-size: 1.1rem;
-  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -77,8 +76,7 @@ h2 {
 
 p.big {
   color: white;
-  font-size: 1.7rem;
-  font-weight: 800;
+  font: bold 24px 'Arial';
 }
 
 .p-bold-and-white {
@@ -106,9 +104,24 @@ p.big {
   bottom: -5px;
 }
 
+.dashboard-swiper::part(bullet),
+.dashboard-swiper::part(bullet-active) {
+  width: 6px;
+  height: 6px;
+}
+
+ion-icon {
+  font-size: 30px;
+}
+
 .card-bordered {
   background-color: transparent;
   border-color: #4d4d4d;
   border-style: solid;
   border-width: 1px;
+}
+
+:host ::ng-deep .apexcharts-series path,
+:host ::ng-deep .apexcharts-series rect {
+  pointer-events: none !important;
 }

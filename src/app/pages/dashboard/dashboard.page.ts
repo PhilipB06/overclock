@@ -10,6 +10,10 @@ export interface ChartOptions {
   dataLabels: ApexDataLabels;
   stroke: ApexStroke;
   title: ApexTitleSubtitle;
+  plotOptions: ApexPlotOptions;
+  grid: ApexGrid;
+  tooltip: ApexTooltip;
+  yaxis: ApexYAxis;
 }
 
 @Component({
@@ -22,11 +26,34 @@ export interface ChartOptions {
 })
 export class DashboardPage {
   chartOptions: Partial<ChartOptions> = {
-    series: [{ name: 'Hours', data: [4, 5, 8, 7, 6, 4] }],
-    chart: { type: 'bar', height: 250, toolbar: { show: false }, foreColor: '#e5e5e5' },
-    xaxis: { categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'] },
-    dataLabels: { enabled: false },
-    stroke: { curve: 'smooth' },
-    title: { text: 'Monthly Overtime', align: 'center', style: { color: '#e5e5e5' } }
+    series: [{ name: 'Hours', data: [1, 2, 3, 5, 4, 1] }],
+    chart: {
+      type: 'bar',
+      height: 250,
+      toolbar: { show: false },
+      foreColor: '#e5e5e5',
+      background: 'transparent'
+    },
+    plotOptions: {
+      bar: {
+        colors: {
+          ranges: [
+            { from: -9999, to: -0.01, color: '#e74c3c' },
+            { from: 0, to: 9999, color: '#363636ff' }
+          ]
+        }
+      }
+    },
+    stroke: { show: false },
+    xaxis: {
+      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      labels: {style: { colors: '#bfbfbf' }},
+      axisBorder: { show: false },
+      axisTicks: { show: false }
+    },
+    yaxis: { show: false },
+    grid: {
+      show: false,
+    },
   };
 }

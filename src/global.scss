@@ -65,3 +65,7 @@ ion-card-content {
     padding: 15px !important;
 }
 
+ion-toolbar {
+  --border-width: 0;
+  --border-color: transparent;
+}
